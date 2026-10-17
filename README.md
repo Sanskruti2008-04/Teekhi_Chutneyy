@@ -66,7 +66,6 @@ In another terminal:
 cd server
 npm run dev
 ```
-API health check: `http://localhost:5000/api/health`.
 
 ### Using the app
 1. Register as a citizen and sign in.
@@ -76,73 +75,14 @@ API health check: `http://localhost:5000/api/health`.
 5. The report owner can open **My reports** and select **Verify Resolution** once resolved.
 6. Open **Nearby** and allow browser location access to see nearby active reports; open **Stats** for charts.
 
-## Environment variables
-
-See `server/.env.example` and `client/.env.example`. Base64 photo fallback is useful for demos but should not be treated as a production image CDN; configure Cloudinary for public deployments.
-
-## Deployment
-
-### MongoDB Atlas
-1. Create a free/shared cluster in MongoDB Atlas.
-2. Create a database user with a strong password.
-3. In **Network Access**, allow your deployment environment. For a hackathon demo, `0.0.0.0/0` works but is less restrictive; use tighter IP rules where practical.
-4. Copy the Node.js connection string, replace the password, and set the database name, e.g. `civicfix`.
-
-### Render (server)
-1. Push this repository to GitHub.
-2. In Render, choose **New → Blueprint** and select the repository; Render reads `render.yaml`.
-3. Set `MONGODB_URI`, `JWT_SECRET`, and `CLIENT_URL` in the Render service environment. Add Cloudinary values if available.
-4. Deploy. Verify `https://YOUR-API.onrender.com/api/health`.
-5. Copy the API base URL ending in `/api`.
-
-### Vercel (client)
-1. Import the same GitHub repository into Vercel.
-2. Set the **Root Directory** to `client`.
-3. Vercel detects Vite; build command `npm run build`, output directory `dist`.
-4. Add `VITE_API_URL=https://YOUR-API.onrender.com/api`.
-5. Deploy, then set the Render `CLIENT_URL` to the Vercel origin and redeploy the API if needed.
-6. Test registration, report submission, duplicate detection, admin workflow, and verification on the deployed domain.
-
-The included `client/vercel.json` supports SPA route fallback. Render's free instances may sleep when idle, so the first API request can take longer.
-
-## Team Members
-- Team Member 1 — Name / role (replace before submission)
-- Team Member 2 — Name / role (replace before submission)
-- Team Member 3 — Name / role (replace before submission)
+## Team Name: Teekhi Chutney
+Team member: Sanskruti Mahendra Thakur
 
 ## Live Link
-[Add deployed frontend URL here]
+https://teekhi-chutneyy.vercel.app
 
 ## Video Link
 [Add demo video URL here]
-
-## 3–5 minute demo script (target runtime: 4:00)
-
-- **0:00–0:20 — Problem and opening:** “Civic complaints are duplicated, priorities are opaque, and residents often cannot tell whether work was completed. CivicFix Sentinel makes the process traceable.”
-- **0:20–0:55 — Submit a report:** Sign in as a citizen. Create “Deep pothole near bus stop”, choose Pothole, severity 5, attach a photo, and click the map to set the pin. Submit.
-- **0:55–1:20 — Duplicate Shield:** Create another report in the same category at the same pin. The API searches active reports within 50 metres. Show the duplicate prompt and choose **Upvote existing issue**; explain that the count increases and any attached photos are appended rather than creating another record.
-- **1:20–1:55 — Admin priority and explanation:** Sign in as an admin and open Admin. Point to the report's priority score and “Why this rank?” breakdown: severity contributes 50, each upvote contributes 2, and unresolved age adds 3 per day.
-- **1:55–2:25 — Assign and start work:** Assign “Road Maintenance Team” and mark the report In progress. Show the status change in the admin queue and citizen report.
-- **2:25–3:05 — Resolution evidence:** Upload an after-photo. Attempting to resolve without it is blocked. Resolve the report and show the resolution timestamp/status.
-- **3:05–3:35 — Citizen verification:** Return to the report owner's dashboard. Show the five-stage progress bar, before/after evidence, and press **Verify Resolution**. Status becomes Verified.
-- **3:35–4:00 — Stats and close:** Open Stats to show total reports, resolved count, average resolution time, and category/status chart. Close: “CivicFix Sentinel turns complaints into accountable, measurable civic action.”
-
-## Suggested 15-commit sequence
-1. `chore: scaffold client and server workspaces`
-2. `feat(api): add Express app and health endpoint`
-3. `feat(auth): add user model and password hashing`
-4. `feat(auth): add JWT registration and login`
-5. `feat(reports): add GeoJSON report model and indexes`
-6. `feat(reports): add report creation and validation`
-7. `feat(reports): add 50m duplicate shield and upvotes`
-8. `feat(priority): calculate explainable priority server-side`
-9. `feat(admin): add assignment and status workflow`
-10. `feat(media): add Cloudinary and data URL uploads`
-11. `feat(client): add responsive app shell and auth`
-12. `feat(client): add report form and map pin drop`
-13. `feat(client): add citizen and admin dashboards`
-14. `feat(client): add nearby map and statistics charts`
-15. `docs: add deployment guide and demo script`
 
 ## Accountability workflow updates
 
