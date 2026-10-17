@@ -2,6 +2,9 @@
 
 A civic issue reporting and resolution platform for potholes, water leaks, garbage, broken streetlights, and other local issues.
 
+Team Name: Teekhi Chutney
+Team Member: Sanskruti Mahendra Thakur
+
 ## Problem
 Civic issues are often reported repeatedly, difficult to prioritize transparently, and hard for residents to track after submission.
 
