@@ -1,4 +1,4 @@
-const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace(/\/$/, '');
+const API_URL = (https://civivvix-sentinel-api.onrender.com || 'http://localhost:5000/api').replace(/\/$/, '');
 let token = localStorage.getItem('civicfix_token') || '';
 export function setToken(value) { token = value || ''; if (token) localStorage.setItem('civicfix_token', token); else localStorage.removeItem('civicfix_token'); }
 export function getToken() { return token; }
