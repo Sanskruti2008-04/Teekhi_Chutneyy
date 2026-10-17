@@ -82,7 +82,7 @@ Team member: Sanskruti Mahendra Thakur
 https://teekhi-chutneyy.vercel.app
 
 ## Video Link
-[Add demo video URL here]
+(https://youtu.be/wC0jCe5bjaU)
 
 ## Accountability workflow updates
 
