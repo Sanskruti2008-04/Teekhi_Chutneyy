@@ -9,7 +9,7 @@ import adminRoutes from './routes/adminRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL ? process.env.CLIENT_URL.split(',').map(s => s.trim()) : true }));
+app.use(cors());
 app.use(express.json({ limit: '15mb' }));
 app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'CivicFix Sentinel API' }));
 app.use('/api/auth', authRoutes);
