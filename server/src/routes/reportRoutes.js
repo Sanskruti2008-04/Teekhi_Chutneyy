@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import { protect, adminOnly } from '../middleware/auth.js';
+import { listReports, createReport, upvoteReport, nearbyReports, updateReport, verifyReport, closeReport, reopenReport } from '../controllers/reportController.js';
+const router = Router();
+router.get('/', protect, listReports);
+router.get('/nearby', protect, nearbyReports);
+router.post('/', protect, createReport);
+router.post('/:id/upvote', protect, upvoteReport);
+router.patch('/:id', protect, adminOnly, updateReport);
+router.post('/:id/close', protect, closeReport);
+router.post('/:id/reopen', protect, reopenReport);
+router.post('/:id/verify', protect, verifyReport);
+export default router;
