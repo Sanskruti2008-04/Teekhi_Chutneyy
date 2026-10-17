@@ -1,4 +1,4 @@
-const API_URL = "https://civivvix-sentinel-api.onrender.com";
+const API_URL = "https://civivvix-sentinel-api.onrender.com/api";
 let token = localStorage.getItem('civicfix_token') || '';
 export function setToken(value) { token = value || ''; if (token) localStorage.setItem('civicfix_token', token); else localStorage.removeItem('civicfix_token'); }
 export function getToken() { return token; }
